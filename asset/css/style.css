@@ -1,0 +1,60 @@
+.container {
+    height: calc(var(--vh, 1vh) * 100);
+    padding: min(5em, 8%);
+    width: 400px;
+    background-color: white;
+    box-sizing: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 1em;
+}
+
+h1 {
+    font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+}
+
+p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+image {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: skyblue;
+}
+
+nav {
+    position: absolute;
+    right: -16em;
+    transition: right 200ms ease-in-out;
+}
+
+nav.show {
+    right: 0;
+}
+
+@font-face {
+    font-family: MapleMono;
+    src: url(../font/MapleMono-CN.ttf);
+}
+
+body {
+    background: url("../img/background.jpg") no-repeat center center fixed;
+    background-color: skyblue;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /*兼容浏览器版本*/
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
