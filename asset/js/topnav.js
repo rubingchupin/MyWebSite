@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // 字体加载检测
+    document.fonts.ready.then(() => {
+        // 字体加载完成后执行
+        document.querySelector('.topnavbar').style.visibility = 'visible';
+    });
+
     // 窗口尺寸监听
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {

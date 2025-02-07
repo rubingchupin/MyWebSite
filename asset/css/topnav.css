@@ -13,6 +13,8 @@
     align-items: center;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    visibility: hidden;
+    transition: visibility 0.3s;
 }
 
 

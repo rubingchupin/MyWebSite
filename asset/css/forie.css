@@ -38,11 +38,9 @@ h4 {
 
 @font-face {
     font-family: MapleMono;
-    src: url(../font/MapleMono-CN.ttf);
+    src: url(../font/MapleMono.woff2);
+    font-display: swap;
 }
-
-
-/* pc */
 
 @media screen and (min-width: 828px) {
     .showM {
@@ -78,9 +76,6 @@ h4 {
         margin-top: 2rem;
     }
 }
-
-
-/* mobile */
 
 @media screen and (max-width: 828px) {
     html {

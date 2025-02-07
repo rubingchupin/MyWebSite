@@ -42,7 +42,8 @@ nav.show {
 
 @font-face {
     font-family: MapleMono;
-    src: url(../font/MapleMono-CN.ttf);
+    src: url(../font/MapleMono.woff2);
+    font-display: swap;
 }
 
 body {
