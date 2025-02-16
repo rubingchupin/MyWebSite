@@ -106,13 +106,47 @@
     transition: transform 0.3s ease;
 }
 
+.music-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-icon {
+    font-size: 1.4rem;
+    color: #34495e;
+    transition: transform 0.2s ease;
+}
+
+/* 按下状态 */
+.music-toggle.active .music-icon {
+    color: #3498db;
+    transform: scale(1.1);
+}
+
+.music-toggle:hover .music-icon {
+    color: #2980b9;
+}
 
 /* 移动端适配 */
 
 @media screen and (max-width: 768px) {
+    .topnavbar {
+        z-index: 1000;
+        /* 导航栏 */
+    }
+
     .topnav-links {
         position: fixed;
-        top: 70px;
+        top: 60px;
         right: -100%;
         width: 280px;
         height: calc(100vh - 70px);
@@ -126,17 +160,22 @@
     .topnav-links.active {
         right: 0;
     }
+    .music-toggle {
+        z-index: 1001;
+        margin-left: auto;
+        order: 2;
+    }
+
     .menu-toggle {
-        display: block;
+        z-index: 1002;
+        order: 3;
+        margin-left: 1rem;
     }
-    .menu-icon.active {
-        transform: rotate(90deg);
-    }
-    .topnav-item {
-        width: 100%;
-        padding: 1rem 0;
-    }
-    .topnav-link {
-        font-size: 1.2rem;
+
+    .menu-toggle,
+    .music-toggle {
+        display: flex !important;
+        position: relative;
+        z-index: 1002;
     }
 }

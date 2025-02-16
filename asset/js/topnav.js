@@ -51,4 +51,45 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    // 音乐控制
+    const musicToggle = document.querySelector('.music-toggle');
+    const musicIcon = document.querySelector('.music-icon');
+    const bgMusic = document.getElementById('bg-music');
+    
+    // 初始化静音状态
+    if(bgMusic) {
+        bgMusic.muted = true;
+        bgMusic.volume = 0.4; // 默认音量40%
+    }
+
+    if (musicToggle && bgMusic) {
+        let initialized = false;
+        
+        musicToggle.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            
+            try {
+                if (!initialized) {
+                    await bgMusic.play();
+                    bgMusic.pause();
+                    bgMusic.muted = false;
+                    initialized = true;
+                }
+                
+                musicToggle.classList.toggle('active');
+                
+                if (musicToggle.classList.contains('active')) {
+                    musicIcon.classList.replace('fa-music-slash', 'fa-music');
+                    await bgMusic.play();
+                } else {
+                    musicIcon.classList.replace('fa-music', 'fa-music-slash');
+                    bgMusic.pause();
+                }
+            } catch (err) {
+                console.error('播放失败:', err);
+                musicToggle.classList.remove('active');
+                musicIcon.classList.replace('fa-music', 'fa-music-slash');
+            }
+        });
+    }
 });
