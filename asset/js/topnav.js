@@ -35,10 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 平滑滚动
     document.querySelectorAll('.topnav-link').forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const targetId = link.getAttribute('href');
             const targetSection = document.querySelector(targetId);
-
             if (targetSection) {
                 window.scrollTo({
                     top: targetSection.offsetTop - 80,
@@ -51,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
     // 音乐控制
     const musicToggle = document.querySelector('.music-toggle');
     const musicIcon = document.querySelector('.music-icon');
